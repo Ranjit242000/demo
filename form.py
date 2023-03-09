@@ -1,0 +1,30 @@
+import streamlit as st
+from PIL import Image
+
+img=Image.open("groot.jpg")
+st.image(img)
+st.title("R.J college")
+st.header("masters application")
+n=st.text_input("Enter your name:- ")
+f=st.text_input("Enter your father name:- ")
+m=st.text_input("Enter your mother name:- ")
+g=st.radio("gender",("male","female","transgender","others"))
+st.write("Qualifications :- ")
+
+option_1 = st.checkbox("ssc")
+option_2 = st.checkbox("hsc")
+option_3 = st.checkbox("bsc")
+option_4 = st.checkbox("msc")
+option_5 = st.checkbox("phd")
+option=st.selectbox("your field of interest:- ",("physics","chemistry","maths","botany","statistics","zoology"))
+st.write("you selected",option)
+d= st.date_input("DOB")
+st.write("your date of birth:", d)
+st.text_area("statement of purpose: ", max_chars=50)
+if(st.button("submit application")):
+    st.warning("your form has been submited")
+    st.write("name:- ", n)
+    st.write("father name:- ", f)
+    st.write("mother name:- ",m)
+    st.write("gender:- ", g)
+    st.write("your field of interset:- ", option)
